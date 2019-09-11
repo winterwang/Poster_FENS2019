@@ -107,4 +107,34 @@
   file      = {:/home/wangcc-me/Documents/LSHTMproject/references/Multilevel-Modeling-Using-Mplus.pdf:PDF},
 }
 
+@Article{Palla2019,
+  author        = {Palla, Luigi and Almoosawi, Suzana},
+  title         = {Diurnal Patterns of Energy Intake Derived via Principal Component Analysis and Their Relationship with Adiposity Measures in Adolescents: Results from the National Diet and Nutrition Survey RP (2008--2012)},
+  journal       = {Nutrients},
+  year          = {2019},
+  volume        = {11},
+  number        = {2},
+  pages         = {422},
+  __markedentry = {[takeshi:6]},
+  publisher     = {Multidisciplinary Digital Publishing Institute},
+  timestamp     = {2019-09-11},
+}
+
+@Article{,
+  author    = {Almoosawi, Suzana and Vingeliene, Snieguole and Gachon, Frederic and Voortman, Trudy and Palla, Luigi and Johnston, Jonathan D and Van Dam, Rob Martinus and Darimont, Christian and Karagounis, Leonidas G},
+  title     = {{Chronotype: Implications for Epidemiologic Studies on Chrono-Nutrition and Cardiometabolic Health}},
+  journal   = {Advances in Nutrition},
+  year      = {2018},
+  volume    = {10},
+  number    = {1},
+  pages     = {30-42},
+  month     = {11},
+  issn      = {2161-8313},
+  abstract  = {{Chrono-nutrition is an emerging research field in nutritional epidemiology that encompasses 3 dimensions of eating behavior: timing, frequency, and regularity. To date, few studies have investigated how an individual's circadian typology, i.e., one's chronotype, affects the association between chrono-nutrition and cardiometabolic health. This review sets the directions for future research by providing a narrative overview of recent epidemiologic research on chronotype, its determinants, and its association with dietary intake and cardiometabolic health. Limited research was found on the association between chronotype and dietary intake in infants, children, and older adults. Moreover, most of the evidence in adolescents and adults was restricted to cross-sectional surveys with few longitudinal cohorts simultaneously collecting data on chronotype and dietary intake. There was a gap in the research concerning the association between chronotype and the 3 dimensions of chrono-nutrition. Whether chronotype modifies the association between diet and cardiometabolic health outcomes remains to be elucidated. In conclusion, further research is required to understand the interplay between chronotype, chrono-nutrition, and cardiometabolic health outcomes.}},
+  doi       = {10.1093/advances/nmy070},
+  eprint    = {http://oup.prod.sis.lan/advances/article-pdf/10/1/30/27763220/nmy070.pdf},
+  timestamp = {2019-09-11},
+  url       = {https://doi.org/10.1093/advances/nmy070},
+}
+
 @Comment{jabref-meta: databaseType:bibtex;}
