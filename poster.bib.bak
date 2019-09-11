@@ -1,0 +1,102 @@
+% Encoding: UTF-8
+@article{shannon1948communication,
+  author = {Claude E. Shannon},
+  title = {A Mathematical Theory of Communication},
+  journal = {Bell System Technical Journal},
+  year = 1948,
+  volume = {27},
+  number = {3},
+  pages = {379-423},
+}
+
+@Article{mansukhani2018investigating,
+  author    = {Mansukhani, R and Palla, L},
+  title     = {Investigating eating time patterns in UK adults from The 2008--2012 National Diet and Nutrition Survey},
+  journal   = {Proceedings of the Nutrition Society},
+  year      = {2018},
+  volume    = {77},
+  number    = {OCE1},
+  publisher = {Cambridge University Press},
+}
+
+@Article{leech2017temporal,
+  author    = {Leech, Rebecca M and Worsley, Anthony and Timperio, Anna and McNaughton, Sarah A},
+  title     = {Temporal eating patterns: a latent class analysis approach},
+  journal   = {International Journal of Behavioral Nutrition and Physical Activity},
+  year      = {2017},
+  volume    = {14},
+  number    = {1},
+  pages     = {3},
+  file      = {:/home/wangcc-me/Documents/LSHTMproject/references/s12966-016-0459-6.pdf:PDF},
+  publisher = {BioMed Central},
+}
+
+@Article{asher2015time,
+  author    = {Asher, Gad and Sassone-Corsi, Paolo},
+  title     = {Time for food: the intimate interplay between nutrition, metabolism, and the circadian clock},
+  journal   = {Cell},
+  year      = {2015},
+  volume    = {161},
+  number    = {1},
+  pages     = {84--92},
+  file      = {:/home/wangcc-me/Documents/LSHTMproject/references/1-s2.0-S0092867415003025-main.pdf:PDF},
+  publisher = {Elsevier},
+}
+
+@Article{uemura2015breakfast,
+  author    = {Uemura, Mayu and Yatsuya, Hiroshi and Hilawe, Esayas Haregot and Li, Yuanying and Wang, Chaochen and Chiang, Chifa and Otsuka, Rei and Toyoshima, Hideaki and Tamakoshi, Koji and Aoyama, Atsuko},
+  title     = {Breakfast skipping is positively associated with incidence of type 2 diabetes mellitus: evidence from the Aichi Workers’ Cohort Study},
+  journal   = {Journal of Epidemiology},
+  year      = {2015},
+  volume    = {25},
+  number    = {5},
+  pages     = {351--358},
+  publisher = {Japan Epidemiological Association},
+}
+
+@Article{almoosawi2013diurnal,
+  author    = {Almoosawi, S and Prynne, CJ and Hardy, R and Stephen, AM},
+  title     = {Diurnal eating rhythms: association with long-term development of diabetes in the 1946 British birth cohort},
+  journal   = {Nutrition, Metabolism and Cardiovascular Diseases},
+  year      = {2013},
+  volume    = {23},
+  number    = {10},
+  pages     = {1025--1030},
+  publisher = {Elsevier},
+}
+
+@Article{Almoosawi2013,
+  author    = {Almoosawi, Suzana and Prynne, Celia J and Hardy, Rebecca and Stephen, Alison M},
+  title     = {Time-of-day of energy intake: association with hypertension and blood pressure 10 years later in the 1946 British Birth Cohort},
+  journal   = {Journal of hypertension},
+  year      = {2013},
+  volume    = {31},
+  number    = {5},
+  pages     = {882--892},
+  publisher = {LWW},
+}
+
+@Article{almoosawi2016chrono,
+  author    = {Almoosawi, S and Vingeliene, S and Karagounis, LG and Pot, GK},
+  title     = {Chrono-nutrition: a review of current evidence from observational studies on global trends in time-of-day of energy intake and its association with obesity},
+  journal   = {Proceedings of the Nutrition Society},
+  year      = {2016},
+  volume    = {75},
+  number    = {4},
+  pages     = {487--500},
+  file      = {:/home/wangcc-me/Documents/LSHTMproject/references/chrononutrition_a_review_of_current_evidence_from_observational_studies_on_global_trends_in_timeofday_of_energy_intake_and_its_association_with_obesity.pdf:PDF},
+  publisher = {Cambridge University Press},
+}
+
+@Article{pan2011rotating,
+  author    = {Pan, An and Schernhammer, Eva S and Sun, Qi and Hu, Frank B},
+  title     = {Rotating night shift work and risk of type 2 diabetes: two prospective cohort studies in women},
+  journal   = {PLoS Medicine},
+  year      = {2011},
+  volume    = {8},
+  number    = {12},
+  pages     = {e1001141},
+  publisher = {Public Library of Science},
+}
+
+@Comment{jabref-meta: databaseType:bibtex;}
