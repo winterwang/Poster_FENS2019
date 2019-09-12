@@ -9,7 +9,7 @@
 %\usepackage[x11names]{xcolor} % use color for the horizontal line
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}
-\usepackage[size=custom,width=38.1,height=54.2,scale=0.5]{beamerposter}
+\usepackage[size=custom,width=38.1,height=54.2,scale=0.4]{beamerposter}
 \usetheme{gemini}
 \usecolortheme{gemini}
 \usepackage{graphicx}
@@ -83,10 +83,10 @@
 \separatorcolumn
 
 \begin{column}{\colwidth}
-
+    \vskip-1.45ex
   \begin{block}{Introduction}
 
-    % \vskip-1.45ex
+    \vskip-1.45ex
     \begin{itemize}
 	\item The timing of energy/nutrient intake has been previously shown to be associated with obesity and diabetes \cite{Almoosawi2019Chrono};
 	\item Recently derived diurnal patterns of energy/carbohydrate intake suggested the potential interplay of circadian biology and social behaviour contributing to obesity \cite{Palla2019};
@@ -120,7 +120,7 @@
   \end{block}
 
 
-   \vskip-1.85ex
+   \vskip-3.85ex
   \begin{block}{Data and Methodology}
     \vskip-1.85ex
 
@@ -140,7 +140,7 @@
 \centering
 % \captionof{table}{Definition of Type 2 Diabetes.} \label{tab:title2} 
 \caption{\label{tab:tab1}Definition of Type 2 Diabetes.}
-\vskip-2.85ex
+\vskip-1.85ex
 \begin{tabular}{lccc}
 \toprule
 \textbf{Diabetes status} & \textbf{Self-reported} & \textbf{Glucose (mmol/L)} & \textbf{HbA1c (\%)} \\ \midrule
@@ -150,23 +150,31 @@ Undiagnosed              & No                     & $\geqslant$ 7.00      & $\ge
 Diagnosed                & Yes                    & --                        & --                  \\ \bottomrule
 \end{tabular}
 \end{table}
+\vskip-1.45ex
 
 
 
 
   \end{block}
 
-
+\vskip-2.45ex
   \begin{block}{Results}
-
+\vskip-2.45ex
     \begin{figure}
       \centering
-      \caption{Biplot for CA of 60 food groups and 7 time slots in NDNS RP.}
-      \includegraphics[width=0.95\textwidth]{Fig/F60T7.png}	\vskip-2.45ex
-      \label{fig:total}
+      \caption{Biplot for CA of 60 food groups and 7 time slots in NDNS RP, among non-diabetes.}
+      \includegraphics[width=0.88\textwidth]{Fig/F60T7_nonDM.png}	\vskip-2.45ex
+      \label{fig:NonDM}
     \end{figure}
+\vskip-1ex
 
-
+\begin{figure}
+      \centering
+      \caption{Biplot for CA of 60 food groups and 7 time slots in NDNS RP, among diabetes.}
+      \includegraphics[width=0.88\textwidth]{Fig/F60T7_DM.png}	\vskip-2.45ex
+      \label{fig:DM}
+    \end{figure}
+    
   \end{block}
 
 \end{column}
@@ -174,13 +182,33 @@ Diagnosed                & Yes                    & --                        & 
 \separatorcolumn
 
 \begin{column}{\colwidth}
+  \begin{block}{}
+
+    \begin{figure}
+      \centering
+      \caption{Biplot for CA of 60 food groups and 7 time slots in NDNS RP, among undiagnosed diabetes.}
+      \includegraphics[width=0.88\textwidth]{Fig/F60T7_UndiagDM.png}	\vskip-2.45ex
+      \label{fig:UndiagDM}
+    \end{figure}
+    \begin{figure}
+      \centering
+      \caption{Biplot for CA of 60 food groups and 7 time slots in NDNS RP, among pre-diabetes.}
+      \includegraphics[width=0.88\textwidth]{Fig/F60T7_PreDM}	\vskip-2.45ex
+      \label{fig:PreDM}
+    \end{figure}
+    % \begin{figure}
+    %   \centering
+    %   \caption{Biplot for CA of 60 food groups and 7 time slots in NDNS RP.}
+    %   \includegraphics[width=0.95\textwidth]{Fig/F60T7.png}	\vskip-2.45ex
+    %   \label{fig:PreDM}
+    % \end{figure}
+  \end{block}
 
 
 
+\begin{block}{Discussion}
 
-%\begin{block}{Discussion}
-%
-%\end{block}
+\end{block}
 
 
 \end{column}
