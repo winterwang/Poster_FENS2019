@@ -9,7 +9,7 @@
 %\usepackage[x11names]{xcolor} % use color for the horizontal line
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}
-\usepackage[size=custom,width=38.1,height=54.2,scale=0.4]{beamerposter}
+\usepackage[size=custom,width=38.1,height=54.2,scale=0.42]{beamerposter}
 \usetheme{gemini}
 \usecolortheme{gemini}
 \usepackage{graphicx}
@@ -57,7 +57,7 @@
 {
 	\begin{tikzpicture}[remember picture,overlay] 
 %	\node [anchor=north east, inner sep=3cm] at (current page.north east) {\includegraphics[height=5cm]{Fig/LSHTM-logo-trans-white.eps}}; 
-    \node [anchor=north east, inner sep=3.4cm] at ([xshift=2.5cm,yshift=1.3cm]current page.north east)     {\includegraphics[height=2.5cm]{Fig/LSHTM-logo-trans-white.eps}}; 
+    \node [anchor=north east, inner sep=3.3cm] at ([xshift=2.5cm,yshift=1.3cm]current page.north east)     {\includegraphics[height=2.5cm]{Fig/LSHTM-logo-trans-white.eps}}; 
 	\end{tikzpicture} 
 }
 
@@ -65,7 +65,7 @@
 {
 	\begin{tikzpicture}[remember picture,overlay] 
 	%	\node [anchor=north east, inner sep=3cm] at (current page.north east) {\includegraphics[height=5cm]{Fig/LSHTM-logo-trans-white.eps}}; 
-	\node [anchor=north west, inner sep=3.7cm] at ([xshift=-2.7cm,yshift=1.5cm]current page.north west) {\includegraphics[height=2.5cm]{Fig/amu-logo-trans-white.eps}}; %{\includegraphics[height=6.6cm]{Fig/amu-logo-trans-green.eps}};  
+	\node [anchor=north west, inner sep=3.6cm] at ([xshift=-2.7cm,yshift=1.5cm]current page.north west) {\includegraphics[height=2.5cm]{Fig/amu-logo-trans-white.eps}}; %{\includegraphics[height=6.6cm]{Fig/amu-logo-trans-green.eps}};  
 	\end{tikzpicture} 
 }
 
@@ -73,7 +73,7 @@
 {
 	\begin{tikzpicture}[remember picture,overlay] 
 	%	\node [anchor=north east, inner sep=3cm] at (current page.north east) {\includegraphics[height=5cm]{Fig/LSHTM-logo-trans-white.eps}}; 
-	\node [anchor=north west, inner sep=3.7cm] at ([xshift=0.5cm,yshift=1.5cm]current page.north west) {\includegraphics[height=2.5cm]{Fig/suzana-logo-trans-white.eps}}; \end{tikzpicture} 
+	\node [anchor=north west, inner sep=3.6cm] at ([xshift=0.5cm,yshift=1.5cm]current page.north west) {\includegraphics[height=2.5cm]{Fig/suzana-logo-trans-white.eps}}; \end{tikzpicture} 
 }
 
 
@@ -83,7 +83,7 @@
 \separatorcolumn
 
 \begin{column}{\colwidth}
-    \vskip-1.45ex
+    \vskip-2.45ex
   \begin{block}{Introduction}
 
     \vskip-1.45ex
@@ -120,27 +120,24 @@
   \end{block}
 
 
-   \vskip-3.85ex
+   \vskip-4.25ex
   \begin{block}{Data and Methodology}
-    \vskip-1.85ex
+    \vskip-2.15ex
 
 \begin{itemize}
 	\item National Diet and Nutrition Survey Rolling Programme (NDNS RP, 2008-2017) included 6802 adults (2810 men and 3992 women) aged 19 or older in the UK, and their 749,026 food recordings collected by a 4-day-diary.
 	\item Time of the day was categorized into 7 slots: 6-9 am, 9-12 noon, 12-2 pm, 2-5 pm, 5-8 pm, 8-10 pm and 10 pm-6 am.
-	\item The derived contingency table between 60 food groups and the above 7 time slots were analyzed by Correspondence Analysis (CA). Biplots separately for the foods included in the food healthiness score  tertiles, for all adults combined and separately by diabetes status.
-	
-	\item The odds ratio estimate was derived of consuming unhealthy food groups later in the day compared to earlier in the day, by logistic regression.
-
+	\item The derived contingency table between 60 food groups and the above 7 time slots were analyzed by Correspondence Analysis (CA). Biplots plotted separately for the foods for all adults combined and separately by diabetes status.
 \end{itemize}
- \vskip-1.85ex
-% Please add the following required packages to your document preamble:
-% \usepackage{booktabs}
+\vskip-2.85ex
+
 \begin{table}
 % \captionsetup{font=large}
 \centering
 % \captionof{table}{Definition of Type 2 Diabetes.} \label{tab:title2} 
-\caption{\label{tab:tab1}Definition of Type 2 Diabetes.}
-\vskip-1.85ex
+\caption{\label{tab:tab1}Definition of Type 2 Diabetes (T2D).}
+\vskip-0.85ex
+\small
 \begin{tabular}{lcccc}
 \toprule
 \textbf{Diabetes status} & \textbf{Self-reported} & \textbf{Glucose (mmol/L)} & \textbf{HbA1c (\%)} & \textbf{n} \\ \midrule
@@ -151,19 +148,26 @@ Diagnosed                & Yes                    & --                        & 
 Missing                 & NA                      & NA                        & NA                &  3717 \\ \bottomrule
 \end{tabular}
 \end{table}
-\vskip-1.45ex
+\vskip-2.45ex
 
 
+\begin{itemize}
+	
+	\item The odds ratio estimate was derived of consuming unhealthy food groups later in the day compared to earlier in the day, by logistic regression models.
 
-
+\end{itemize}
+ \vskip-1.45ex
+ 
+% Please add the following required packages to your document preamble:
+% \usepackage{booktabs}
   \end{block}
 
-\vskip-2.45ex
+\vskip-2.65ex
   \begin{block}{Results}
 \vskip-2.45ex
     \begin{figure}
       \centering
-      \caption{Biplot for CA of 60 food groups and 7 time slots in NDNS RP, among non-diabetes.}
+      \caption{Biplot for CA of food groups and time slots among non-diabetes.}
       \includegraphics[width=0.88\textwidth]{Fig/F60T7_nonDM.png}	\vskip-2.45ex
       \label{fig:NonDM}
     \end{figure}
@@ -171,7 +175,7 @@ Missing                 & NA                      & NA                        & 
 
 \begin{figure}
       \centering
-      \caption{Biplot for CA of 60 food groups and 7 time slots in NDNS RP, among diabetes.}
+      \caption{Biplot for CA of food groups and time slots among diabetes.}
       \includegraphics[width=0.88\textwidth]{Fig/F60T7_DM.png}	\vskip-2.45ex
       \label{fig:DM}
     \end{figure}
@@ -187,13 +191,13 @@ Missing                 & NA                      & NA                        & 
 
     \begin{figure}
       \centering
-      \caption{Biplot for CA of 60 food groups and 7 time slots in NDNS RP, among undiagnosed diabetes.}
+      \caption{Biplot for CA of food groups and time slots among undiagnosed diabetes.}
       \includegraphics[width=0.88\textwidth]{Fig/F60T7_UndiagDM.png}	\vskip-2.45ex
       \label{fig:UndiagDM}
     \end{figure}
     \begin{figure}
       \centering
-      \caption{Biplot for CA of 60 food groups and 7 time slots in NDNS RP, among pre-diabetes.}
+      \caption{Biplot for CA of food groups and time slots among pre-diabetes.}
       \includegraphics[width=0.88\textwidth]{Fig/F60T7_PreDM}	\vskip-2.45ex
       \label{fig:PreDM}
     \end{figure}
@@ -203,11 +207,46 @@ Missing                 & NA                      & NA                        & 
     %   \includegraphics[width=0.95\textwidth]{Fig/F60T7.png}	\vskip-2.45ex
     %   \label{fig:PreDM}
     % \end{figure}
+    
+    % Please add the following required packages to your document preamble:
+% \usepackage{booktabs}
+\begin{table}
+\caption{\label{tab:tab2}OR (99\%CI) for food groups eaten at night (8pm - ) vs. earlier time, among total and according to different T2D status, NDNS RP 2008-2017.}
+\small
+\vskip-1.85ex
+\begin{tabular}{@{}lccccc@{}}
+\toprule
+\textbf{Food group}  & \textbf{Overall}    & \textbf{Non-DM}     & \textbf{Pre-DM}    & \textbf{Undiag-DM}  & \textbf{DM}         \\ \midrule
+Pudding              & 1.38 (1.03, 1.86)   & 1.50 (1.10, 2.07)   & 0.89 (0.16, 4.87)  & 1.81 (0.41, 7.98)   & 0.58 (0.14, 2.43)   \\
+Sweetened Soft drink & 1.74 (1.47, 2.06)   & 1.72 (1.43, 2.06)   & 1.87 (0.97, 3.57)  & 2.72 (1.44, 5.14)   & 1.38 (0.65, 2.96)   \\
+Sugar Confectionery  & 1.92 (1.38, 2.69)   & 1.63 (1.14, 2.32)   & 2.10 (0.52, 8.46)  & 13.07 (4.59, 37.24) & 5.10 (2.15, 12.09)  \\
+Chocolate            & 3.19 (2.69. 3.79)   & 3.10 (2.57, 3.73)   & 4.07 (2.58, 3.73)  & 2.52 (0.95, 6.66)   & 5.13 (2.55, 10.30)  \\
+Spirit               & 11.13 (8.37, 14.80) & 10.86 (8.01, 14.73) & 8.48 (2.26, 31.79) & 7.51 (1.99, 5.21)   & 36.8 (7.36, 183.66) \\
+Beer                 & 7.19 (5.87, 8.82)   & 7.49 (6.02, 9.34)   & 4.05 (2.00, 8.20)  & 7.87 (3.51, 17.63)  & 6.32 (2.29, 17.47)  \\
+Ice cream            & 2.38 (1.79, 3.15)   & 2.45 (1.82, 3.31)   & 3.32 (0.75, 14.62) & 0.98 (0.14, 7.00)   & 1.65 (0.54, 5.07)   \\
+Biscuit              & 1.91 (1.67, 2.16)   & 1.78 (1.55, 2.03)   & 3.51 (2.16, 5.71)  & 2.75 (1.35, 5.59)   & 2.44 (1.54, 3.88)   \\
+Crisp                & 1.55 (1.27, 1.88)   & 1.56 (1.27, 1.92)   & 1.95 (0.79, 4.78)  & 1.37 (0.37, 5.12)   & 1.16 (0.49, 2.75)   \\ \bottomrule
+\multicolumn{6}{l}{Mixed effect logisitic regression models were adjusted for age, sex, and social-economic status.}\\
+\end{tabular}
+\end{table}
+
+    
+    
   \end{block}
 
 
 
 \begin{block}{Discussion}
+
+
+\begin{itemize}
+\item Assessing the relationships between less healthy foods and timing of eating is a first step towards identifying specific public health targets for behaviour change/modification.
+\item Potentially alcoholic/sweetened beverages, chocolates and foods rich in added sugars, saturated fats might had higher odds of being consumed at later time in the day.
+\item Food and drinks consumed in the evening/night time slot tend to be highly processed and easily accessible.
+\item Undiagnosed T2D patients might be in higher risk of worsening their condition as they had higher tendency to consume less healthy foods.
+\item The survey cross-sectional nature warrants further investigations by longitudinal cohort studies.
+
+\end{itemize}
 
 \end{block}
 
