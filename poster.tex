@@ -41,7 +41,7 @@
 
 \title{Mining relationships between food groups, eating time slots\\ and diabetes status in adults from UK NDNS RP}
 
-\author{Luigi Palla \inst{1} \and Chaochen Wang \inst{2} \and Suzana Almoosawi \inst{3}}
+\author{Luigi Palla \inst{1} \and Chaochen Wang \inst{2} \and Marta Gruszka-Goh \inst{1} \and Suzana Almoosawi \inst{3}}
 
 \institute[shortinst]{\inst{1} Dept Medical Statistics, LSHTM, London, UK; \samelineand \inst{2} Dept Public Health, Aichi Medical University, Aichi, Japan \samelineand \\ \inst{3} Brain, Performance and Nutrition Research Centre, Northumbria University, Newcastle, UK}
 
@@ -91,7 +91,7 @@
 	\item The timing of energy/nutrient intake has been previously shown to be associated with obesity and diabetes \cite{Almoosawi2019Chrono};
 	\item Recently derived diurnal patterns of energy/carbohydrate intake suggested the potential interplay of circadian biology and social behaviour contributing to obesity \cite{Palla2019};
 	% \item Evening intake of energy is positively associated with incidence of hypertension, and overweight/obesity \cite{Almoosawi2013,almoosawi2016chrono}.
-  \item The relationship between food groups and the time when they are eaten is of interest, how such relationships vary by type 2 diabetes status are still left unknown.
+  \item AIM:Characterise the relationship between food groups and the time of day when they are eaten, how such relationships vary by type 2 diabetes status are still left unknown.
 \end{itemize}
     % \vskip-1.45ex
 
@@ -126,8 +126,8 @@
 
 \begin{itemize}
 	\item National Diet and Nutrition Survey Rolling Programme (NDNS RP, 2008-2017) included 6802 adults (2810 men and 3992 women) aged 19 or older in the UK, and their 749,026 food recordings collected by a 4-day-diary.
-	\item Time of the day was categorized into 7 slots: 6-9 am, 9-12 noon, 12-2 pm, 2-5 pm, 5-8 pm, 8-10 pm and 10 pm-6 am.
-	\item The derived contingency table between 60 food groups and the above 7 time slots were analyzed by Correspondence Analysis (CA). Biplots plotted separately for the foods for all adults combined and separately by diabetes status.
+	\item Time of the day was categorized into 7 slots: 6-9 am, 9-12 noon, 12-2 pm, 2-5 pm, 5-8 pm, 8-10 pm and 10 pm-6 am; foods recorded were categorised in one of 60 standard food groups.
+	\item The derived contingency table cross-classifying 60 food groups with the 7 time slots were analyzed by Correspondence Analysis (CA). Biplots graphically displaying the association were derived for all adults combined and separately by diabetes status.
 \end{itemize}
 \vskip-2.85ex
 
@@ -153,7 +153,7 @@ Missing                 & NA                      & NA                        & 
 
 \begin{itemize}
 	
-	\item The odds ratio estimate was derived of consuming unhealthy food groups later in the day compared to earlier in the day, by logistic regression models.
+	\item The odds ratio estimate was derived of consuming the unhealthy food groups (the ones flagged by CA) later in the day compared to earlier in the day, by logistic regression models accounting for repeated measures (food entries) from the same individual.
 
 \end{itemize}
  \vskip-1.45ex
@@ -167,7 +167,7 @@ Missing                 & NA                      & NA                        & 
 \vskip-2.45ex
     \begin{figure}
       \centering
-      \caption{Biplot for CA of food groups and time slots among non-diabetes.}
+      \caption{Biplot for CA of food groups and time slots among non-diabetics.}
       \includegraphics[width=0.88\textwidth]{Fig/F60T7_nonDM.png}	\vskip-2.45ex
       \label{fig:NonDM}
     \end{figure}
@@ -175,7 +175,7 @@ Missing                 & NA                      & NA                        & 
 
 \begin{figure}
       \centering
-      \caption{Biplot for CA of food groups and time slots among diabetes.}
+      \caption{Biplot for CA of food groups and time slots among diabetics.}
       \includegraphics[width=0.88\textwidth]{Fig/F60T7_DM.png}	\vskip-2.45ex
       \label{fig:DM}
     \end{figure}
@@ -191,13 +191,13 @@ Missing                 & NA                      & NA                        & 
 
     \begin{figure}
       \centering
-      \caption{Biplot for CA of food groups and time slots among undiagnosed diabetes.}
+      \caption{Biplot for CA of food groups and time slots among undiagnosed diabetics.}
       \includegraphics[width=0.88\textwidth]{Fig/F60T7_UndiagDM.png}	\vskip-2.45ex
       \label{fig:UndiagDM}
     \end{figure}
     \begin{figure}
       \centering
-      \caption{Biplot for CA of food groups and time slots among pre-diabetes.}
+      \caption{Biplot for CA of food groups and time slots among pre-diabetics.}
       \includegraphics[width=0.88\textwidth]{Fig/F60T7_PreDM}	\vskip-2.45ex
       \label{fig:PreDM}
     \end{figure}
@@ -241,10 +241,10 @@ Crisp                & 1.55 (1.27, 1.88)   & 1.56 (1.27, 1.92)   & 1.95 (0.79, 4
 
 \begin{itemize}
 \item Assessing the relationships between less healthy foods and timing of eating is a first step towards identifying specific public health targets for behaviour change/modification.
-\item Potentially alcoholic/sweetened beverages, chocolates and foods rich in added sugars, saturated fats might had higher odds of being consumed at later time in the day.
+\item All unhealthy foods emerged from CA were significantly more likely to be eaten after 8pm. These included alcoholic/sweetened beverages, chocolates and other foods rich in added sugars and saturated fats like biscuits and ice-cream.
 \item Food and drinks consumed in the evening/night time slot tend to be highly processed and easily accessible.
-\item Undiagnosed T2D patients might be in higher risk of worsening their condition as they had higher tendency to consume less healthy foods.
-\item The survey cross-sectional nature warrants further investigations by longitudinal cohort studies.
+\item Undiagnosed T2D patients might be at higher risk of causing/worsening their condition as they had higher odds to consume a number of less healthy foods after 8pm (sugar-confectionary, biscuits, sweetened soft drinks and puddings) than diabetics and non diabetics.
+\item The survey cross-sectional nature warrants further investigations by longitudinal cohort studies to establish the causal relation between time of eating of unhealthy foods and diabetes.
 
 \end{itemize}
 
