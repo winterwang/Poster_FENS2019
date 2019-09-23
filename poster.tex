@@ -116,14 +116,14 @@
 \caption{\label{tab:tab1}Definition of Type 2 Diabetes (T2D).}
 \vskip-0.85ex
 \small
-\begin{tabular}{lcccc}
+\begin{tabular}{lccccc}
 \toprule
-\textbf{Diabetes status} & \textbf{Self-reported} & \textbf{Glucose (mmol/L)} & \textbf{HbA1c (\%)} & \textbf{n} \\ \midrule
-No diabetes              & No                     & $<$ 6.10                   & $<$ 6.5          & 2626          \\
-Pre-diabetes             & No                     & 6.10 $\sim$ 6.99            & --              &   133        \\
-Undiagnosed              & No                     & $\geqslant$ 7.00           & $\geqslant$ 6.5  &   99        \\
-Diagnosed                & Yes                    & --                        & --                &   227       \\ 
-Missing                 & NA                      & NA                        & NA                &  3717 \\ \bottomrule
+\textbf{Diabetes status} & \textbf{Self-reported} & \textbf{Glucose (mmol/L)} &  & \textbf{HbA1c (\%)} & \textbf{n} \\ \midrule
+No diabetes              & No                     & $<$ 6.10                 & AND  & $<$ 6.5          & 2626          \\
+Pre-diabetes             & No                     & 6.10 $\sim$ 6.99         &   & --              &   133        \\
+Undiagnosed              & No                     & $\geqslant$ 7.00        & OR   & $\geqslant$ 6.5  &   99        \\
+Diagnosed                & Yes                    & --                      &   & --                &   227       \\ 
+Missing                 & NA                      & NA                      &  & NA                &  3717 \\ \bottomrule
 \end{tabular}
 \end{table}
 \vskip-2.45ex
@@ -131,7 +131,7 @@ Missing                 & NA                      & NA                        & 
 
 \begin{itemize}
 	
-	\item The odds ratio estimate was derived of consuming the unhealthy food groups (the ones flagged by CA) later in the day (8 pm or later) compared to earlier in the day, by logistic regression models with generalised estimating equation (GEE) accounting for repeated food entries from the same individual.
+	\item The odds ratio estimate was derived of consuming unhealthy food groups selected by CA, later in the day (8pm - 6am) compared to earlier in the day, by logistic regression models with generalised estimating equation (GEE) accounting for repeated food entries from the same individual.
 
 \end{itemize}
  \vskip-1.45ex
@@ -145,7 +145,7 @@ Missing                 & NA                      & NA                        & 
 \vskip-2.45ex
     \begin{figure}
       \centering
-      \caption{Biplot for CA of food groups and time slots among non-diabetics.}
+      \caption{Biplot for CA of food groups and time slots among \underline{\textbf{non-diabetics}}.}
       \includegraphics[width=0.88\textwidth]{Fig/F60T7_nonDM.png}	\vskip-2.45ex
       \label{fig:NonDM}
     \end{figure}
@@ -153,7 +153,7 @@ Missing                 & NA                      & NA                        & 
 
 \begin{figure}
       \centering
-      \caption{Biplot for CA of food groups and time slots among diabetics.}
+      \caption{Biplot for CA of food groups and time slots among \underline{\textbf{diabetics}}.}
       \includegraphics[width=0.88\textwidth]{Fig/F60T7_DM.png}	\vskip-2.45ex
       \label{fig:DM}
     \end{figure}
@@ -169,13 +169,13 @@ Missing                 & NA                      & NA                        & 
 
     \begin{figure}
       \centering
-      \caption{Biplot for CA of food groups and time slots among undiagnosed diabetics.}
+      \caption{Biplot for CA of food groups and time slots among \underline{\textbf{undiagnosed diabetics}}.}
       \includegraphics[width=0.88\textwidth]{Fig/F60T7_UndiagDM.png}	\vskip-2.45ex
       \label{fig:UndiagDM}
     \end{figure}
     \begin{figure}
       \centering
-      \caption{Biplot for CA of food groups and time slots among pre-diabetics.}
+      \caption{Biplot for CA of food groups and time slots among \underline{\textbf{pre-diabetics}}.}
       \includegraphics[width=0.88\textwidth]{Fig/F60T7_PreDM}	\vskip-2.45ex
       \label{fig:PreDM}
     \end{figure}
@@ -189,7 +189,7 @@ Missing                 & NA                      & NA                        & 
     % Please add the following required packages to your document preamble:
 % \usepackage{booktabs}
 \begin{table}
-\caption{\label{tab:tab2}OR (99\%CI) for food groups eaten at night (8pm - ) vs. earlier time, among total and according to different T2D status, NDNS RP 2008-2017.}
+\caption{\label{tab:tab2}OR (99\%CI) for food groups eaten at night (8pm - 6am) vs. earlier time, among total and according to different T2D status, NDNS RP 2008-2017.}
 \small
 \vskip-1.85ex
 \begin{tabular}{@{}lccccc@{}}
