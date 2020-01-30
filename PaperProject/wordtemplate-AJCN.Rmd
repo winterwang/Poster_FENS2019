@@ -1,0 +1,252 @@
+---
+title: "The day-time patterns of carbohydrate intake in the UK adults -- results from the National Diet and Nutritional Survey (2008/09 - 2015/16)"
+author: "Chaochen Wang^1,2^, Suzana Almoosawi^3^, Luigi Palla^1^"
+# date: "2018年11月6日"
+output: 
+  redoc::rdocx_reversible:
+    keep_md: TRUE
+    highlight_outputs: FALSE
+    reference_docx: templateAJCN.docx
+bibliography: bibliography.bib
+csl: the-american-journal-of-clinical-nutrition.csl
+# csl: brain.csl
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+
+```{r echo=FALSE, message=FALSE}
+Figure_nums <- captioner::captioner(prefix = "FIGURE. ")
+f.ref <- function(x) {
+  stringr::str_extract(Figure_nums(x), "[^:]*")
+}
+
+Figure.1_cap <- Figure_nums(name = "fig_1", 
+                        caption = "Diagram for the hierarchical data structure of the diet diary data collected in the NDNS RP.")
+Figure.2_cap <- Figure_nums(name = "fig_2", 
+                        caption = "Day level latent classes solution for carbohydrate temporal eating patterns.")
+Figure.3_cap <- Figure_nums(name = "fig_3", 
+                        caption = "Multilevel latent classes solution for carbohydrate temporal eating patterns: 3 classes in day level, 3 classes in individual level.")
+Figure.4_cap <- Figure_nums(name = "fig_4", 
+                        caption = "The compositions of energy consumption within each time slot by individual level carbohydrate eating classes.")
+
+```
+
+
+
+```{r echo=FALSE, message=FALSE}
+Table_nums <- captioner::captioner(prefix = "TABLE. ")
+T.ref <- function(x) {
+  stringr::str_extract(Table_nums(x), "[^:]*")
+}
+
+Table.1_cap <- Table_nums(name = "Tab1", 
+                        caption = "Weighted means and percentages (95% CI) of the nutrients intake according to individual level carbohydrate eating classes. 
+(NDNS RP 2008/09-15/16, sample size = 6155)")
+
+Table.2_cap <- Table_nums(name = "Tab2",
+                        caption = "Weighted means, percentages (95% CIs) of the characteristics by latent class memberships in the UK adults.
+(NDNS RP 2008/09-2015/16, sample size = 6155)")
+# Table.3_cap <- Table_nums(name = "Tab3", 
+#                         caption = "Means (standard deviations), and counts (%) of the characteristics of different types of carbohydrate eating days.")
+
+# Figure.2_cap <- Figure_nums(name = "fig_2", 
+#                         caption = "Day level latent classes solution for carbohydrate temporal eating patterns.")
+# Figure.3_cap <- Figure_nums(name = "fig_3", 
+#                         caption = "Multilevel latent classes solution for carbohydrate temporal eating patterns: 3 classes in day level, 3 classes in individual level.")
+# Figure.4_cap <- Figure_nums(name = "fig_4", 
+#                         caption = "The compositions of energy consumption within each time slot by individual level carbohydrate eating classes.")
+
+```
+
+1. Department of Medical Statistics, London School of Hygiene & Tropical Medicine, London, UK (C.W., L.P.);
+2. Department of Public Health, Aichi Medical University, Nagakute, Aichi, JAPAN (C.W.);
+3. Brain, Performance and Nutrition Research Centre, Northumbria University, Newcastle, UK (S.A.)
+
+Corresponding Author: Luigi Palla
+
+Present address for L.P.: Department of Medical Statistics, London School of Hygiene & Tropical Medicine, Keppel Street, London, WC1E 7HT, United Kingdom. (email: Luigi.Palla@lshtm.ac.uk)
+
+Sources of Support: Funding....
+
+Short running head: Temporal eating patterns for carbohydrate 
+
+##### 
+
+**Abbreviations:** 
+
+MLCA, multilevel latent class analysis; T2D, type 2 diabetes; CVD, cardiovascular disease; NDNS RP, National Diet and Nutrition Survey Rolling Programme; PHE, Public Health England; FSA, Food Standards Agency; PSU, primary sampling units; BMI, body mass index; WC, waist circumferences; HDL, high-density lipoprotein; LDL, low-density lipoprotein; TG, triglycerides; HbA1c, hemoglobin A1c; CI, confidence interval.
+
+
+##### 
+
+## ABSTRACT
+
+
+**Background:**
+
+**Objective:**
+
+**Design:**
+
+**Results:**
+
+**Conclusions:**
+
+
+##### 
+
+## INTRODUCTION
+
+The widely accepted standard these days seems to be that we eat three main meals a day in addition to snacks. However, whether this is really an ideal temporal eating pattern for everyone has never been answered nor supported with scientific evidence. Typologies of temporal patterns of eating are mostly hitherto unexplored in the general population. More importantly, the proportions of people who actually follow certain temporal eating patterns, and whether individuals are consistently following one specific temporal eating pattern or whether they switch from one to another have not been studied either. 
+
+Evidence accumulated recently suggests that meal timing can affect a wide variety of physiological processes as well as health outcomes [@asher2015time]. Shift workers have a higher risk of developing metabolic syndrome [@de2009rotating], type 2 diabetes (T2D) [@pan2011rotating], cardiovascular disease (CVD) and CVD-related mortality [@wangShiftWorkRisk2018]. Breakfast skippers may have a lower daily diet quality compared with breakfast consumers [@Murakami2018]. Furthermore, skipping breakfast was found to be associated with a higher risk of developing T2D [@uemura2015breakfast], while replacing fat at breakfast with carbohydrate may reduce the risk of T2D incidence [@almoosawi2013diurnal]. In addition, evidence also suggested that evening intake of energy may be associated with higher incidence of hypertension [@Almoosawi2013], and overweight/obesity [@almoosawi2016chrono].
+
+More recently, discernible temporal eating patterns that differed by sociodemographic profiles obtained by latent class analysis using nutrition survey data revealed different groups of temporal eaters [@leech2017temporal; @mansukhani2018investigating] but were based on averaging the total energy intake calculated across different days of measurement without accounting for the day-to-day variation in temporal eating patterns. Furthermore, previous studies [@leech2017temporal; @mansukhani2018investigating] have focused on describing temporal patterns of energy intake, without considering the timing of macro-nutrient intake. Thus, novel analytic methods that can account for this within-person day-to-day variation is needed. 
+
+We focused on carbohydrate as a nutrient potentially related to glycaemic variability, a known predictor of cardiovascular disease **[citation needed]**. So far, eating more carbohydrate in the morning has been found to be negatively associated with metabolic syndrome [@almoosawi2013time]. On the other hand, high total consumption of carbohydrate has been linked with higher risk of type 2 diabetes [@alhazmi2012macronutrient], or even higher risk of all-cause mortality [@dehghanAssociationsFatsCarbohydrate2017]. Whether the amount or the timing (or both) of carbohydrate consumption during the day matters is an important question to address for guiding recommendations for optimal dietary intake.
+
+Hence, in the present article, we aimed at characterizing both time and quantity eating patterns of carbohydrate consumption in a nationally representative sample of British adults from the National Diet and Nutrition Survey Rolling Programme (2008-2016), taking into account the variability of nutrient intake accros days of dietary records. 
+
+
+## METHODS 
+
+### Study sample
+Data collected from the UK National Diet and Nutrition Survey Rolling Programme (NDNS RP 2008/09-15/16) were analyzed [@MRCElsieWiddowsonLaboratory2018]. The NDNS RP is funded by Public Health England (PHE) and the UK Food Standards Agency (FSA) and is designed as a nationally representative sample to assess the diet, nutrient intake, and nutritional status of the general population living in the UK. The NDNS RP has now completed and analyzed its eighth year. The sample was randomly drawn from a list of all addresses in the UK, clustered into postcode sectors (primary sampling units, PSUs). Details of the rationale, design and methods of the survey have been described in detail elsewhere [@bates2014national; @roberts2018national]. In brief, for years 1 to 8 combined, a sample of 39300 addresses was randomly selected from 1438 PSUs. Selected addresses where children resided were randomly allocated to one of two groups to determine whether an adult (aged 19 years or older) and a child (aged 1.5 to 18 years) or a child only, were selected for interviews. Response rates for completion of the required diet diary (three or four consecutive days) were 56%, 53%, and 53% for years 1 to 4, 5 to 6, and 7 to 8 respectively. A total of 6155 adults (2537 men and 3618 women) were kept in the current study.
+
+### Diet diary and definition of carbohydrate intake
+Participants were asked to keep a record of everything eaten or drunk over four consecutive days. In the diet diary, participants were also asked to write down the portions sizes in household measures (e.g. one tablespoon of beans, one KitKat finger-size), or for packaged foods to note the weight indicated on the packet. Homemade dishes were also described in the diary about their ingredients, quantities, along with a brief description of the cooking procedure and how much of the dish were consumed. For each eating occasion, in addition to the details of what and how much was eaten, participants were also asked to record: when was it, where they were, and who they were eating with. 
+
+Detailed diary checking was performed by trained staffs to code and convert the food consumption into energy and nutrients intake using the DINO (Diet in Nutrients Out) [@Fitt2015]. Intakes of nutrients were calculated from the food consumption records using a specially adapted Nutrient Databank [@smithers1993maff], which was originally developed by the Ministry of Agriculture, Fisheries, and Food (MAFF) for the Dietary and Nutritional Survey of British Adults. Further details of data coding and editing are outlined in Appendix A of the NDNS official reports [@bates2014national; @roberts2018national]. For validation of estimates of energy intake from the self-reported dietary records of food and drinks consumed, the NDNS RP included a doubly labelled water (DLW) sub-study of participants aged four years and over [@bates2014national].
+
+Specifically, the main variables that we adopted in the current analysis were defined as: 
+
+- Total energy intake = (protein $\times$ 17) + (fat $\times$ 37) + (carbohydrate $\times$ 16) + (alcohol $\times$ 29)  kJ;
+- Carbohydrate intake = total sugars + starch; 
+- All quantities above were measured as the mass in grams.
+- Time across a typical survey day was divided into 7 time slots: 6-9 am, 9-12, 12-2 pm, 2-5 pm, 5-8 pm, 8-10 pm, 10 pm-6 am. 
+- The responses of carbohydrate consumption across time slots were further categorized as: no energy intake; carbohydrate contributed < 50% or $\geqslant$ 50% of total energy intake within that time slot.
+
+### Statistical analysis
+Latent class analysis (LCA) is a statistical technique that identifies latent (unobserved) classifications on the basis of observed categorical variables [@collins2010latent]. However, since the day level diet diaries are nested within individuals, the hierarchical data structure **(`r f.ref("fig_1")`)** requires multilevel statistical techniques. Multilevel latent class analysis (MLCA) [@muthen2009multilevel; @henry2010multilevel; @finch2017multilevel] is an extension of the LCA method which accounts for the repeated measurement of carbohydrate intake over 3-4 days nested within individuals. In this model, day-level latent classes are first extracted within individuals, and then the random means from the day-level latent classes solution are used as indicators for a second latent class model at the individual level. That is to say, under MLCA models, individuals are allowed to have different probabilities of following different types of carbohydrate temporal eating patterns during their diet diary recording period. Based on the day level eating patterns and the probabilities of patterns within individuals, the individual level eating patterns could be further clarified. Furthermore, we employed non-parametric MLCA approach which does not assume the random intercepts to follow a normal distribution and also much less computationally demanding. The reasons include: it had been shown to be able to result in more accurate recovery of the underlying latent structure of the data at both levels and to provide better latent class model compared with parametric approach [@finch2014multilevel].
+
+
+
+
+<!-- `r Figure_nums("fig_1")` -->
+
+#### Strategy of conducting MLCA
+
+
+To identify the best-fitting model, we used the following sequential modelling strategy [@henry2010multilevel]: first, we ignored the multilevel structure of the data and estimated a series of traditional LCA models to determine the number of classes at the observational day-level; next, a series of MLCA models were fitted to account for the multilevel structure of the data. In these models, the number of day-level classes was based on the best fitting LCA model from the first step, and the LCA model at the individual-level was estimated to identify the number of individual-level latent classes; last, once the number of individual-level latent classes was defined based on the previous stage, the number of day-level classes was modified (one class lower and one class higher than in the second step) to investigate the effect of changing level 1 classes and to confirm the best fitting model.
+
+The number of classes in level 1 was determined by 1) the evaluation of model fit indices, including the Bayesian information criterion (BIC) and entropy, which is a statistic that summarizes latent class probabilities where values near 1 indicate better latent class separation; 2) the Lo-Mendell-Rubin Likelihood Ratio Test (LMR-LRT) [@lo2001testing; @nylund2007deciding] which compares $q$ vs $q-1$ classes models, where $q$ is the number of latent classes; and most importantly, 3) pattern interpretability. In the steps of performing multilevel LCA, where LMR-LRT is not available, the same rules of model fit indices and pattern interpretability were used to determine the optimal combination of latent classes in observation day-level and individual-level. MLCA models were fitted in Mplus 7.4 [@muthen2005mplus].
+
+### Other variables and analyses
+
+Computer-assisted personal interviews were undertaken by trained interviewers to collect background information of the participants on smoking habits (current, ex-smoker, and never), ethnicity (white, non-white), education level (lower than degree/degree or above level), living with a partner or not, and other socio-demographic variables. Participants also had their height, weight, blood pressure, and waist circumferences (WC) measured by the nurses during the visit of the interview. A self-completion questionnaire - the Recent Physical Activity Questionnaire (RPAQ) [@besson2009estimating] was used to estimate physical activity. Blood samples were taken from the participants. Serum total, high-density lipoprotein (HDL), and low-density lipoprotein (LDL), cholesterol, triglycerides (TG), fasting blood glucose, hemoglobin A1c (HbA1c) were measured. HbA1c of 6.5% was used as the cut off value for diagnosing diabetes. Hypertension was defined as with systolic blood pressure of 140 mmHg or above, or diastolic blood pressure of 90 mmHg or above, or taking any medication specifically to reduce blood pressure. Body mass index (BMI), was calculated as weight in kilograms divided by height in square meters. BMI was then categorized into less than 25 kg/m^2^ (normal weight), 25 to 30 kg/m^2^ (overweight), and higher or equal to 30 kg/m^2^ (obese).
+
+Individual-level point estimates and 95% confidence intervals (CIs) were estimated by applying individual, nurse visiting, and blood sample weights accordingly to adjust for differences in sample selection and the clustered survey design. Descriptive statistics of participants were presented as weighted means (95% CI) or weight percentages (95% CI). After examining the distribution of the data, the following variables were log-transformed to improve normality: fasting blood glucose, HbA1c, TC, LDL, HDL, TG and average physical activity duration per day. Weighted geometric mean (95% CI) were used for all log-transformed variables. Weighted estimates of nutrients consumption across the 7-time slots of the day were calculated for each individual-level latent class. Contributions (%) of the average energy intake within time slots were evaluated by determining the percentages of energy coming from carbohydrate, fat, protein, and alcohol intake. 
+
+For continuous variables, the *F* test was used to determine differences between latent classes with Bonferroni correction to account for multiple testing across > 2 classes when applicable. For categorical variables, differences between latent classes were assessed using the adjusted Pearson $\chi^2$ test for survey data. Survey-designed multivariable logistic regression (for hypertension), linear regression models (for BMI and WC) were used to test for associations between individual-level latent classes of carbohydrate eating patterns and WC/BMI. Since diabetic participants may or may not modify their carbohydrate eating habits, we also fitted all the above-mentioned regression models restricted to those without diabetes. All statistical analyses were performed with `svyset` command as implemented in Stata software version 15.1 [@stata15]. 
+
+## RESULTS
+
+After examining the MLCA model results (details are shown in the supplementary Tables), the most substantially interpretable model was found to be the model with three latent classes in the day level and three latent classes in the individual level. In this MLCA solution, three carbohydrate eating day patterns emerged from 24483 observation days **(`r f.ref("fig_2")`)**.  
+
+Class 1 days **(`r f.ref("fig_2")`-A)** were given the name of "high percentage carbohydrate day" since in these days of the survey, the probabilities of carbohydrate contributed higher or equal to 50% of the energy consumed were always higher than that in the other two types of days. Specifically, high percentage carbohydrate days were characterized with probabilities of over 0.6 in time slots between 6 am to 9 am, 9 am to 12 noon, and also 2 pm to 5 pm, during which the time slots may be interpreted as breakfast, morning snack, and afternoon snack time periods for many participants. Moreover, even during late night time period, such as 8 pm to 10 pm, and 10 pm to 6 am time slots, the probabilities of having higher carbohydrate contained food were still as high as 0.412, and 0.246, respectively.
+
+Class 2 days **(`r f.ref("fig_2")`-B)** were named as "low percentage carbohydrate day" because first of all, in these days the probability of participants skipping breakfast was 0.45. And after 9 am, within these days, the probability of having low carbohydrate contained food (carbohydrate contributed $<$ 50% of total energy intake), was always higher than having high carbohydrate contained food (carbohydrate contributed $\geqslant$ 50% of total energy intake). In class 2 days, participants also turned to have morning snacks (with a probability of only 0.079 of \textbf{not} eating any food and similar probabilities of having either high or low carbohydrate contained food). This phenomenon may also be interpreted as having a long and late breakfast (brunch) in these mornings. The probability of \textbf{not} eating any food was the lowest for low carbohydrate days during the midnight time slot (10 pm to 6 am), with a probability of 0.590 compared with 0.680 and 0.751 in class 1 and class 3 days, respectively. 
+
+Class 3 days **(`r f.ref("fig_2")`-C)** were called "regular meals day" due to the following reasons: 1) participants' dietary recordings showed that in these days there was almost 0 possibility of not eating any food at lunch (0.019 between 12 noon and 2 pm) and dinner (0.034 between 5 pm and 8 pm); 2) the probabilities of not eating during morning snack time (9 am to 12 noon) and afternoon snack time (2 pm to 5 pm) were also the highest among the three types of days (0.401 and 0.659). 3) during these days, participants may have some high carbohydrate contained food between 8 pm and 10 pm (probability = 0.308), but the probability of not eating any food during 10 pm to 6 am next morning was 0.751, the highest among the three types of days. 
+
+Interestingly, although only shown in supplementary table **(Supplementary Table. 3.)**, the features of three types of carbohydrate eating days are still worth mentioning: the consumption of total energy (7539.98 kJ), total carbohydrate (222.79 g), total sugar (98.63 g), starch (124.07 g), and non-milk extrinsic sugar (59.45 g) was the highest among high percentage carbohydrate days (all *p* < 0.001). On the other hand, the consumption of protein (73.29 g), total fat (67.24 g), and alcohol (13.80 g) were the highest in the regular meals days.
+
+In the random effect models, the non-parametric approach of MLCA was adopted, in which we added a level 2 (individual level) latent classes based on the random means from the level 1 (day level) latent class solution. The results of the individual level LCA solution for 3 classes are presented in **`r f.ref("fig_3")`**.
+
+With three individual-level latent classes **(`r f.ref("fig_3")`)**, a low-carbohydrate eaters class, a moderate-carbohydrate eaters class, and a high-carbohydrate eaters class emerged. 43.1% participants were identified as high-carbohydrate eaters, in these individuals, about 50% of the days (2 out of 4 days) of their dietary diary could be classified as having high percentage carbohydrate days. Nearly 1 out of 4 days of their dietary diary were either "regular meals day" or "low carbohydrate day". 28.1% participants fell into the low carbohydrate eaters class on the left-hand side of **`r f.ref("fig_3")`**, their recordings of food intake showed that in more than 60% of their days, they were having "regular meals" which was characterized as with the highest amount of fat and alcohol consumption. Moderate carbohydrate eaters have comparable proportions (42.0% vs 40.0%) of high carbohydrate days and regular meals days; 18.0% of their dietary diary was found to be low carbohydrate days.
+
+After recognizing that there were three potential latent groups of carbohydrate eaters in the UK adults, whose food consumption patterns were also probably switching from one to another during the survey, their average carbohydrate contribution to total energy intake (as well as the sub-types of carbohydrate actually consumed) within the 7 pre-defined time slots of the day were still of interest. Survey-design-weighted mean energy intake within each time slot of the day and their composition of contribution is illustrated in **`r f.ref("fig_4")`**, weighted mean nutrients intakes are also listed in **`r T.ref("Tab1")`**.
+
+
+Among the three types of carbohydrate eaters, the mean of total energy intake over the 4 days of dietary survey was the highest (7985.8 kJ, 95%CI: 7283.3, 8146.3) in the low carbohydrate eaters group, and the lowest (7341.8 kJ, 95%CI: 7172.5, 7511.2) in the moderate eaters group **`r T.ref("Tab1")`**. Sources of energy for each type of carbohydrate eaters by the 7-time slots were also different. Low carbohydrate eaters **`r f.ref("fig_4")`-A** never had carbohydrate contributing more than 50% of their total energy throughout the day. Energy from fat was the highest for low carbohydrate eaters most of the time during the day (except for the time slot between 10 pm to 6 am next morning). Most impressively, energy contributed by alcohol was always the highest in low carbohydrate eaters, percentages for energy from alcohol for the 7-times slots were 1.4% (6-9 am), 1.8% (9-12 noon), 3.1% (12-2 pm), 7.2% (2-5 pm), 8.4% (5-8 pm), 20.0% (8-10 pm), and 31.2% (10-6 am), respectively. Contributions from different energy sources were quite similar for moderate and high carbohydrate eaters, but their absolute amount of energy consumption at each time slot was largely different. Moderate carbohydrate eaters **`r f.ref("fig_4")`-B** were characterized as consuming the lowest energy (296.9 kJ) before 9 am but having higher energy consumption (967.9 kJ) between 9 am and 12 noon time compared with low and high carbohydrate eaters. Moderate carbohydrate eaters may tend to have later breakfast, later lunch, and probably later dinner as well. They had the highest total energy consumption (599.7 kJ) at night (10 pm - 6 am) across all three types of eaters. High carbohydrate eaters **`r f.ref("fig_4")`-C** consumed the highest total energy (929.0 kJ) during 6 am to 9 am in the morning, and the lowest total energy between 10 pm to 6 am (205.5 kJ). Specifically, carbohydrate contributions to total energy intake were 65.3% (6-9 am), 56.2% (9-12 noon), 46.2% (12-2 pm), 50.3% (2-5 pm), 42.5% (5-8 pm), 44.1% (8-10 pm), and 49.9% (10-6 am). We also noticed that high carbohydrate eaters consumed their energy mainly from the following three time slots: 6-9 am, 12-2 pm, and 5-8 pm. 
+
+In total, the mean of total carbohydrate intake was 203.8 g (95% CI: 199.8, 207.8), 218.3 g (212.9, 223.7), and 233.4 g (229.6, 237.2) for low, moderate, and high carbohydrate eaters, respectively **`r T.ref("Tab1")`**. Total energy contributed by carbohydrate was close to 50% among the high carbohydrate eaters but was only 40.6% among the low carbohydrate eaters. In terms of the sub types (components) of the carbohydrate consumed at each time slot, high carbohydrate eaters consumed more than 2 times (compared to low carbohydrate eaters) and nearly 4 times (against moderate carbohydrate eaters) the amount of sugar (37.9g 95% CI: 36.8, 39.2) and non-milk extrinsic sugar (i.e. free sugar, 11.1g 95%CI: 10.7, 11.6) between 6-9 am. Moderate carbohydrate eaters had carbohydrate intakes that were more spread out throughout the day. They consumed more sugar and starch during 9-12 noon, 2-5 pm, 8-10 pm, and 10-6 am. Low carbohydrate eaters turned to have a similar temporal pattern of consuming carbohydrates as the high carbohydrate eaters, but the absolute amount of fibre, sugar, free sugar, and starch consumed were usually lower than that in the high carbohydrate eaters except for time slots of 2-5 pm, and 10-6 am. Strong evidence (*p* < 0.001) suggested that the mean of total fibre consumption for low, moderate, and high carbohydrate eaters were different: 13.7g (95% CI: 13.4, 14.0), 12.5g (12.1, 12.9), and 14.7g (14.4, 14.9) with all 95% CI being non-overlapping. It is also noteworthy that low carbohydrate eaters consumed the highest average amount of protein (79.9 g, 17.2% of total energy), fat (74.7g, 35.4% of total energy), and alcohol (20.8 g, 6.8% of total energy). 
+
+
+The social-demographic characteristics of the UK adults according to their individual level latent class membership are shown in  **`r T.ref("Tab2")`**. Moderate carbohydrate eaters were relatively younger (*p* < 0.001). Gender distribution across the three types of carbohydrate eaters was reasonably even (*p* = 0.119). There was no evidence of difference in employment status across three types of carbohydrate eaters. However, strong evidence suggested that high carbohydrate eaters had the highest proportion (61.3%) of living with partner (*p* < 0.001); moderate carbohydrate eaters had the lowest average income (27180.8 GBP/year), the highest proportion of non-white population (20.5%), and a lower education level (23.3% with degree of higher education) compared with either low or high carbohydrate eaters. 
+
+Weighted means, percentages of anthropometric measurements, as well as biochemical characteristic profiles according to the latent carbohydrate eater groups are also given in  **`r T.ref("Tab1")`**. Low carbohydrate eaters had higher mean BMI (27.8 kg/m^2^) and larger mean WC (98.9/89.9 cm in men/women) compared with 27.2, 27.3 kg/m^2^, and 95.9/88.7 (men/women), 98.1/87.2 (men/women) cm in moderate and high carbohydrate eaters. Moderate carbohydrate eaters had the highest prevalence of being a current smoker (27.8%), shortest time of daily physical activity (geometric mean: 0.87 hours/day), and lowest prevalence of hypertension (20.2%).
+
+From the results of blood tests, 6.9% of low carbohydrate eaters were found to be diabetic (diagnosed by HbA1C > 6.5%), while the percentages of diabetes in the moderate and high carbohydrate eaters were 3.5%, and 4.1% (*p* = 0.011), respectively. Although there was some evidence (*p* = 0.027) that fasting blood glucose level may be slightly higher in non-diabetic low carbohydrate eaters, the geometric mean for HbA1C was probably lower (*p* = 0.010) in moderate carbohydrate eaters (5.43, 95%CI: 5.39, 5.47). Total cholesterol, HDL, and LDL were all lower in the moderate carbohydrate eaters, while no evidence of difference of TG was found across three types of carbohydrate eaters. 
+
+
+
+## DISCUSSION 
+
+
+### Carbohydrate eating patterns
+
+Using multilevel LCA as a novel technique, and data from the NDNS RP, this project examined carbohydrate temporal eating patterns firstly at the day level, based on which, individual level carbohydrate eating patterns were also defined subsequently. 
+
+Among the dietary diaries collected, there were three distinct latent classes specifically for carbohydrate intake: 1) high probabilities of having high carbohydrate contained food across the hours of day (high percentage carbohydrate day); 2) low carbohydrate food dominant throughout the hours of day (low percentage carbohydrate day); and 3) always having lunch and dinner day (regular meals day). From these day level classifications and their features, one might anticipate that individuals followed much of class 3) days, the regular meals day, might be eating a healthier diet because of regular eating habits. We might also speculate that those who followed either high or low carbohydrate percentage days would consume higher total energy than those who followed mostly regular meals days. 
+
+However, when the MLCA extended the model to an individual level, three types of persons were further defined depending on their 4-day-diary: 1) low carbohydrate eaters, who mostly followed "regular meals day"; 2) moderate carbohydrate eaters, who had similar probabilities of following either "regular meals day" or "high percentage carbohydrate day"; 3) high carbohydrate eaters, who followed "high percentage carbohydrate day" for half of their survey. For the first time, as far as we know, the day-to-day food intake pattern variation within individuals was successfully captured by MLCA models. Results from the MLCA models showed that from the perspective of carbohydrate consumption, people were indeed changing their diet from day to day even over the captured four days. The MLCA models allowed the probability of following a certain type of carbohydrate eating day to vary across individuals. This properly accounted for the fact that for some people, their probability of following a type of food eating pattern during the survey could be higher/lower than that in the others. This finding also suggested that assuming a person will always follow a certain type of temporal eating pattern is not appropriate.
+
+Surprisingly, low carbohydrate eaters whose dietary recordings suggested that they were mostly following a regular temporal meals pattern turned out to be consuming the highest amount of total energy among the three types of carbohydrate eaters. Detailed profiling of energy composition according to the time slots revealed that low carbohydrate eaters had a higher proportion of energy contributed by both alcohol and fat across the 7 time slots. A high percentage of fat consumption was shown in all 7-time slots, energy coming from alcohol exceeded more than one-fifth of the total energy after 8 pm. These findings explained why they were actually consuming the highest energy among the three types of carbohydrate eaters. In the meantime, we also found that participants consuming low carbohydrate food had a higher prevalence of diabetes, hypertension, and obesity. These health issues might lead them to replace carbohydrates in their diet with other energy sources such as fat, protein, or even alcohol. Therefore, there is a possibility that they chose to follow low carbohydrate diets for health purposes, but many of them were replacing carbohydrates with higher energy condensed food or even alcohol at night which might indeed be a public health concern. 
+
+Next, when looking into the details of the timing and composition of the energy intake among the moderate carbohydrate eaters, we realized that although these individuals did not consume as much alcohol as low carbohydrate eaters did at night, they consumed the highest amount of energy, especially during the time period as late as after 10 pm. People who fell into moderate carbohydrate eaters group seemed to have the tendency of having their food or meals later than high carbohydrate eaters. They consumed the highest amount of carbohydrates and also total energy among three types of carbohydrate eaters during the following time slots: 9-12 noon, 2-5 pm, 8-10 pm, and 10pm-6am. These individuals in the NDNS RP were younger, mostly single, with lower average income, and lower education level. They might correspond to the "late eaters" defined by previous studies [@leech2017temporal; @mansukhani2018investigating]. 
+
+Finally, the high carbohydrate eaters identified by our MLCA models had the highest absolute total amount of carbohydrate intake. Most (nearly 70%) of their total energy intake occurred during 6-9 am, 12-2 pm, and 5-8 pm time slots although their total energy consumption was not the highest (between low and moderate carbohydrate eaters). High carbohydrate eaters were also found to be the ones that consumed the least amount of energy after 8 pm. Therefore, contrary to what was anticipated at the beginning, people who followed high percentage carbohydrate days for most of their time were potentially eating a healthier diet compared with the other two eating patterns. 
+
+Our analyses looking for different temporal carbohydrate eating patterns also highlighted the complexity of eating behaviors in the population and the utility of exploratory, data-driven methods to objectively identify eating patterns that reflect both timing and quantities of food intake, which may not have been detected so far in the literature.
+
+
+### Associations between carbohydrate eating patterns and health outcomes
+
+Men who were classified as moderate carbohydrate eaters were estimated to have lower odds of having hypertension compared with low carbohydrate eaters, after adjustment for age, relationship status (living with a partner or not), educational level, BMI, smoking status and total energy intake. As discussed above, moderate carbohydrate eaters tended to have meals (or energy intake) later in time compared with high carbohydrate eaters. But, it is noteworthy that low carbohydrate eaters also obtained a large amount of energy from both fat and alcohol at night. Therefore, considering that moderate carbohydrate eaters were younger than low carbohydrate eaters (although age was adjusted in the full models), it is probable that reverse causality exists here (also due to the nature of cross-sectional study). That is, they were potentially both late eaters, however, with increased age (and so with increased health-related problems/concerns) some of the individuals modified their habits,  replacing carbohydrate food with other energy sources (so that they became low carbohydrate eaters) leading to the phenomenon of lower odds of hypertension in moderate carbohydrate eaters. This phenomenon may be supported by some current trend in following low carbohydrate diets (ketogenic diets) which were found actually with limited weight losing effect and even associated with adverse events such as nonalcoholic fatty liver disease (NAFLD), and insulin resistance [@kosinski2017effects]. Although these hypotheses cannot be determined by the cross-sectional data from NDNS RP, if they are true, the energy sources individuals used to replace carbohydrate in their diet were apparently not wisely chosen. 
+
+Among women, relationship status acted as an interaction factor influencing the associations between carbohydrate eating patterns and BMI and abdominal obesity (WC). Directions of the associations were opposite to each other depending on whether women were living with a partner or not. This interaction effect was more noticeable when looking at abdominal obesity measurement. High carbohydrate eaters who lived with partners had lower BMI and WC than low carbohydrate eaters, while moderate carbohydrate eaters who lived alone had higher WC than their low carbohydrate eating counterparts, after adjustment of age, education level, smoking status, total energy intake, and alcohol consumption. High carbohydrate eaters who were characterized by high and early daily energy consumption and low fat and alcohol intake may reflect a healthier diet and lifestyle, but this might be different between women who lived alone and those who lived with their partners. It was often assumed that living alone may be associated with a lower diversity of food intake and a higher likelihood of having unhealthy dietary choices [@hanna2015relationship]. Therefore, there may be differences in the actual contents consumed in their high carbohydrates, or there may be other social, psychological or lifestyle-related factors related with living alone which were not measured or were not included in the models. Since the inverse association between high carbohydrate eating pattern and BMI or abdominal obesity were only observed among women who lived with partners, further investigation of this hypothesis is needed. In addition, the reason why moderate carbohydrate eaters' WC was larger than low carbohydrate eaters only among women who lived alone is unknown. Given that the evidence of this association was weak and borderline significant, whether it was just a false positive finding should also be explored in other studies.
+
+
+### Limitations and strengths
+ 
+Several limitations in the current project merit consideration.  
+
+First, we ignored the order of observation days in the MLCA models. The food consumption diaries were accomplished by participants for at least 3 out of 4 consecutive days. In the multilevel analyses, these 3 or 4 days' observations were treated as if they were exchangeable in the models. Since one's diet might change according to the season, day of the week (weekdays or weekends), or sometimes depending on what one had consumed the day before, exchangeability of daily diaries is a strong assumption and cannot be overcome by the MLCA models adopted here. Other statistical techniques which could take the order or the longitudinal nature of the data into account, such as repeated measures latent class analysis (RMLCA), latent transition analysis (LTA) [@collins2010latent], or latent class growth analysis (LCGA) [@andruff2009latent; @davidian2008growth; @jung2008introduction] are not applicable for the NDNS RP dataset. The NDNS RP participants were allowed to choose which days to begin their food diaries, but the alternative models above would require that the 3 or 4 repeated measurements of food diaries be recorded at the same time points longitudinally. Specifically, LCGA models (also called growth mixture model) will also need to model the change of the odds of the probability over time as a function (quadratic, or cubic) which is apparently not the objective in the current project.
+
+
+Second, the classification of individuals to latent carbohydrate eating classes was defined by maximum posterior probability assignment rule. This approach assigns individuals to the class for which they have the highest posterior probability of membership [@nagin2005group]. The other approach is multiple pseudo-class draws [@wang2005residual], which was proposed in an attempt to account for uncertainty in class assignment. However, the maximum probability rule is still believed to be able to minimize the number of incorrect assignments [@goodman20071]. A Monte Carlo simulation study [@bray2015eliminating] demonstrated that maximum probability assignment is less biased than multiple pseudo-class draws. 
+
+Moreover, the Monte Carlo simulation study  [@bray2015eliminating] also found that an inclusive LCA (i.e. LCA with covariates) would probably perform better than non-inclusive LCA and has the potential to reduce bias of class assignment. However, whether this advantage can be extended to MLCA in the current project is unknown. Also, because the associations between the latent classes and distal outcomes (hypertension, and obesity) are still under exploration, appropriate covariates for an inclusive LCA model may not be known. Thus, as a first step, given the complexity of the NDNS RP dataset itself, we chose to fit the MLCA models without any covariate in either day level or individual level models. Future studies may be advised to consider incorporating other predictors in the MLCA models to see whether the classifications in both levels can be improved or not. 
+
+Third, detailed information on the occupations of the participants was not available, and thus we could not account for those who had a shift or night work. But considering that completing a 4-consecutive-day food diary may be a tremendous burden for all participants, those with shift or night work might be less able to comply and complete their diary for 4 days. However, the latter hypothesis cannot be verified in the NDNS RP dataset. If people on shifts were included in the NDNS RP sample, the classification in both levels, as well as their associations with either hypertension or BMI would be biased. 
+
+Furthermore, under-reporting due to the burden of recording food and drink intake for 4 days at each occasion is also a concern in the current survey. To evaluate the influence of under-reporting in the NDNS RP sample, the study team conducted a doubly labelled water (DLW) sub-study within the survey. The details of this sub-study can be accessed from the Appendix X of the Official Reports provided by Public Health England [@bates2014national; @roberts2018national]. In the sub-study, there is an assumption that in healthy adults, if energy consumed in food matches total energy expended over a given time period, the individuals are deemed to be in energy balance. Using the DLW technique, total energy expenditure (TEE) from a sub-sample of NDNS RP participants were measured and compared with the estimates of energy consumption from their 4 day diaries. Results of the sub-study showed reasonable agreement between energy consumed and TEE (overall ratio: 0.73), indicating some potential misreporting. Reasons such as misreporting of actual consumption, under-reporting or modified usual intake due to the burden of the survey/DLW sub-study may contribute to under-reporting of their energy consumed. We cannot extrapolate the estimated under-reporting to the whole sample since other individuals' diet might be differentially affected by under-reporting. Besides, within NDNS RP, it is not possible to differentiate between under-reporting due to ill health vs actual misreporting. Subsequently, most previous studies using data from the NDNS RP do not adjust for under-reporting of nutrients intake in the models.
+
+Last, it should be noted that the findings from data-driven, exploratory methods may not be
+generalizable to populations in other countries, since the carbohydrate eating patterns in both day level and individual level may only reflect the dietary habits of the current population. The latter reflect the socio-cultural and lifestyle characteristics of the adult population in the UK. Further research is warranted to explore and better understand the eating patterns in other populations. In particular, the cross-sectional study design prevented us from deducing any causal effect between the carbohydrate eating patterns and respective health outcomes including hypertension, BMI or abdominal obesity. 
+
+Strengths of this study include the large, nationally representative sample of UK men and women. We applied a novel, objective approach using MLCA to examine the carbohydrate eating patterns while applying standardized criteria to determine the number of latent classes. The process of finding the classifications through model-based, data-driven procedure minimizes reliance on researchers' preconceived notions of eating patterns. Eating patterns were determined from 4 consecutive days of well-designed, fully-examined food diaries that provided detailed information of what and when food and drinks were eaten. MLCA correctly accounted for the multilevel structure of the data, where the 4-day diet diaries were nested within the participants. Our findings also captured the day-to-day variation of the respective carbohydrate eating patterns within individuals. Moreover, the examination of associations between the individual level carbohydrate eating patterns and hypertension, BMI, abdominal obesity took the complex and the clustered survey design into consideration, in addition to accounting for participant non-response to survey. Health outcomes such as weight, height, waist circumferences, and blood pressure, diabetes status were measured objectively by trained nurses in addition to lipid profile, glucose, and HbA1C being measured in blood. These approaches have an advantage over self-reported measurements as they may minimize bias caused by misclassification and under-reporting.
+
+### Conclusions
+
+We have successfully defined carbohydrate eating patterns in the general population in UK adults using the NDNS RP database in both observation day level and individual level. Low carbohydrate eaters tended to have higher energy intake from fat and alcohol compared to other types of carbohydrate eaters and eating later in the day. Moderate carbohydrate eaters reported the lowest total daily energy intake and tended to have a higher energy intake later in the day. High carbohydrate eaters obtained most of their carbohydrate as well as energy earlier in the day. These eating patterns specifically for carbohydrate intake were found to differ by timing, quantity, and contributions to energy consumption. Compared with low carbohydrate eaters, men with a moderate carbohydrate eating pattern may had a lower prevalence of hypertension. Women in moderate carbohydrate eating pattern and lived alone had a larger waist circumference compared with low carbohydrate eaters. Among women who lived with partners, a high carbohydrate eating pattern was associated with both lower BMI and smaller waist circumferences. Longitudinal studies are needed to investigate whether the identified eating patterns themselves are changing over time and to study how such circadian eating patterns may relate to the change of blood pressure, obesity, and other health outcomes (incidence of cancer, cardiovascular diseases, or mortality).
+
+## ACKNOWLEDGEMENT 
+
+## CONFLIT OF INTEREST (COI) STATEMENT
+The authors declared no conflicts of interest.
+
+## AUTHOR'S CONTRIBUTIONS
+
+CW, SA, and LP: designed research and had primary responsibility for final content; CW and LP performed statistical analysis; and all authors: wrote the manuscript, read and approved the final manuscript.
+
+#####
+
+## REFERENCES
+
+
+
