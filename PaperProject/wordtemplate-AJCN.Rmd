@@ -1,6 +1,6 @@
 ---
 title: "Relationships between food groups, eating time slots and diabetes status in adults from the UK National Diet and Nutrition Survey (2008–2017)"
-author: "Chaochen Wang^1,2^, Suzana Almoosawi^3^, Luigi Palla^1^"
+author: "Chaochen Wang^1^, Suzana Almoosawi^2^, Luigi Palla^3^"
 # date: "2018年11月6日"
 output: 
   redoc::redoc:
@@ -46,9 +46,10 @@ Table.2_cap <- Table_nums(name = "Tab2",
 
 ```
 
-1. Department of Medical Statistics, London School of Hygiene & Tropical Medicine, London, UK (L.P.);
-2. Department of Public Health, Aichi Medical University, Nagakute, Aichi, JAPAN (C.W.);
-3. Brain, Performance and Nutrition Research Centre, Northumbria University, Newcastle, UK (S.A.)
+
+1. Department of Public Health, Aichi Medical University, Nagakute, Aichi, JAPAN (C.W.);
+3. Brain, Performance and Nutrition Research Centre, Northumbria University, Newcastle, UK (S.A.);
+1. Department of Medical Statistics, London School of Hygiene & Tropical Medicine, London, UK (L.P.)
 
 Corresponding Author: Luigi Palla
 
